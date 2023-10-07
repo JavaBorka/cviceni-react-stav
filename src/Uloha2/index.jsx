@@ -4,6 +4,8 @@ import { useState } from 'react'
 // Zadání 1: Převeď `cislo` na stavovou proměnnou.
 // Zadání 2: Nastav, aby jednotlivá tlačítka měnila stav. +1 přičítalo jedničku, +5 přičítalo pětku, vynulovat nastavovalo na nulu apod.
 
+// POZOR: aby aplikácia správne fungovala, je treba importovať {useState} from 'react'
+
 const Pocitadlo = () => {
 	const [cislo, setCislo] = useState(0)
 
