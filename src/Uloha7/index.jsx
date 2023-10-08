@@ -8,7 +8,7 @@ import { useState } from 'react'
 // Zadání 4. Nastav prvku `ukazatel-uspechu__postup` šířku podle stavové proměnné.
 
 const UkazatelPokroku = ({ barva }) => {
-	const [postoupit, setPostoupit] = useState(0)
+	const [stav, setStav] = useState(0)
 
 	return (
 		<div className="ukazatel-uspechu">
@@ -16,14 +16,15 @@ const UkazatelPokroku = ({ barva }) => {
 				<div
 					className="ukazatel-uspechu__postup"
 					style={{
-						width: postoupit <= 100 && `${postoupit}%`,
+						width: `${stav}%`,
 						backgroundColor: barva,
 					}}
 				></div>
 			</div>
-			<button onClick={() => {
-				setPostoupit(postoupit+10)
-			}}
+			<button
+				onClick={() => {
+					setStav(Math.min(100, stav + 10))
+				}}
 			>
 				postoupit o 10 %
 			</button>
