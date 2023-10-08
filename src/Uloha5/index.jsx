@@ -42,6 +42,41 @@ export const Uloha5 = () => {
 	)
 }
 
-// **** POZNÁMKA PODMÍNĚNÉ ZOBRAZENÍ
+// **** POZNÁMKA PODMÍNĚNÉ ZOBRAZENÍ **** //
 //Pokud nám jde skutečně jen o to, že se má na základě podmínky obsah zobrazit nebo nezobrazit, můžeme si zápis zjednodušit použitím operátoru && (logické AND, česky a zároveň).
+// Takhle by mohla být alternativa, ale použijeme zkrácený zápis pomocí &&
 
+// export const Uloha5 = () => {
+// 	const [openMenu, setOpenMenu] = useState(false)
+
+// 	return (
+// 		<>
+// 			<button
+// 			onClick={() => {
+// 				setOpenMenu(!openMenu)
+// 			}}
+// 			className={openMenu ? "hamburger hamburger--otevrene" : "hamburger"}
+// 			aria-label="menu">
+// 				<span></span>
+// 				<span></span>
+// 				<span></span>
+// 			</button>
+// 				{openMenu ? (
+// 					<ul>
+// 						<li>
+// 							<a href="#o-nas">O nás</a>
+// 						</li>
+// 						<li>
+// 							<a href="#co-delame">Co děláme</a>
+// 						</li>
+// 						<li>
+// 							<a href="#kontakty">Kontakty</a>
+// 						</li>
+// 						<li>
+// 							<a href="#cenik">Ceník</a>
+// 						</li>
+// 					</ul>
+// 				) : null}
+// 		</>
+// 	)
+// }
