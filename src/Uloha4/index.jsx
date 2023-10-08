@@ -1,5 +1,6 @@
 import React from 'react'
 import './carousel.css'
+import { useState } from 'react'
 
 // Zadání 1: Nachystej si adresy obrázků níže do pole.
 // Zadání 2: Přidej komponentě stavovou proměnnou, ve které bude index právě aktivního obrázku. Na začátku 0.
@@ -10,27 +11,50 @@ import './carousel.css'
 
 /*
 	Adresy obrázků:
-	https://source.unsplash.com/WLUHO9A_xik/880x500
-	https://source.unsplash.com/DA1eGglMmlg/880x500
-	https://source.unsplash.com/kTxL6le0Wgk/880x500
-	https://source.unsplash.com/7go5UASxmDY/880x500
-	https://source.unsplash.com/YmATDIFsCmQ/880x500
+	'https://source.unsplash.com/WLUHO9A_xik/880x500',
+	'https://source.unsplash.com/DA1eGglMmlg/880x500',
+	'https://source.unsplash.com/kTxL6le0Wgk/880x500',
+	'https://source.unsplash.com/7go5UASxmDY/880x500',
+	'https://source.unsplash.com/YmATDIFsCmQ/880x500'
 */
 
+const imgUrls = [
+	'https://source.unsplash.com/WLUHO9A_xik/880x500',
+	'https://source.unsplash.com/DA1eGglMmlg/880x500',
+	'https://source.unsplash.com/kTxL6le0Wgk/880x500',
+	'https://source.unsplash.com/7go5UASxmDY/880x500',
+	'https://source.unsplash.com/YmATDIFsCmQ/880x500'
+]
+
 export const Uloha4 = () => {
+	const [index, setIndex] = useState(0)
+
 	return (
 		<div className="carousel">
-			<button className="carousel__predchozi" aria-label="předchozí">
+			<button
+				onClick={() => {
+					setIndex(index-1)
+				}}
+				className="carousel__predchozi"
+				aria-label="předchozí"
+				disabled={index === 0}
+			>
 				←
 			</button>
 			<div className="carousel__media">
 				<img
 					className="carousel__image"
-					src="https://source.unsplash.com/7go5UASxmDY/880x500"
+					src={imgUrls[index]}
 					alt=""
 				/>
 			</div>
-			<button className="carousel__dalsi" aria-label="další">
+			<button 
+				onClick={ () => {
+					setIndex(index+1)
+				}}	
+				className="carousel__dalsi" aria-label="další"
+				disabled={imgUrls.length === index+1}
+				>
 				→
 			</button>
 		</div>
